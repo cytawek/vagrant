@@ -20,7 +20,7 @@ end
   config.vm.provision "ansible_local" do |ansible|
     ansible.galaxy_role_file = 'requirements.yaml'
     ansible.galaxy_roles_path = "/etc/ansible/roles"
-    ansible.galaxy_role_command = "sudo ansible-galaxy install --role-file=%{role_file} --roles-path=%{roles_path}"
+    ansible.galaxy_command = "sudo ansible-galaxy install --role-file=%{role_file} --roles-path=%{roles_path}"
     ansible.playbook = "playbooks/init.yml"
   end
 
